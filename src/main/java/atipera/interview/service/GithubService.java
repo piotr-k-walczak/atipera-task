@@ -31,6 +31,7 @@ public class GithubService {
         return Flux.fromStream(
                 getRepositoriesForUser(user)
                         .toStream()
+                        .filter(repo -> !repo.fork())
                         .map(repo -> {
                                     List<Branch> branches = Optional.ofNullable(
                                                     getBranchesForRepository(user, repo.name())
