@@ -27,7 +27,18 @@ As an api consumer, given header “Accept: application/xml”, I would like to 
 
 ### Run the project
 
+To run the project first build it using maven.
 
+`maven clean install`
+
+It will generate **.jar** file in the **/target** folder.
+Then run it using following command where **JAR_NAME** is the name of generated jar.
+
+`java -jar JAR_NAME`
+
+It will start the app on the set port **1234** which can be changed in **application.properties** file.
+
+`server.port=1234`
 
 #### Config
 To prevent failing due to rate limits, you can use GitHub Personal Access Tokens. They can be set in **application properties**.
